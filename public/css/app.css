@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+body {
+  background-image: linear-gradient(to right, #ffffff8f, #000000);
+  height: 100%;
+  position: relative;
+  
+}
+
+/* grand titre */
+h1,
+    
+/* link */
+a {
+  font-family: 'Kaushan Script', cursive;
+  color: rgb(0, 0, 0)
+}
+
+h5 {
+
+  font-family: 'Kaushan Script', cursive;
+}
+
+
+
+   /* filter */
+.container-filter {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.808);
+  background-image: linear-gradient(to right, #e9ce0094, rgba(0, 0, 0, 0.5));
+}
+
+
+
+li {
+  font-family: 'Kaushan Script', cursive;/* font familly*/
+  font-size: 20px;
+  margin-left: 6px;
+  transition: 2s;
+  color: aliceblue;
+
+}
+
+li:hover {
+  font-size: 23px;
+  transition: 0.3s;
+}
+
+/*background navbar*/
+.navbar-color {
+  background-image: linear-gradient(to right rgb(197, 171, 4), rgb(238, 231, 231));
+
+}
+
+
+.footer-style {
+  background-image: linear-gradient(to right, rgba(219, 158, 2, 0.812), rgba(248, 248, 252, 0.812));
+}
+
+
+
+.container-table-product {
+  margin-left: 140px;
+}
+
+
+.thead-crud {
+  background-image: linear-gradient(to right, rgba(181, 197, 189, 0.93), rgba(211, 195, 12, 0.578));
+}
+
+
+.table-message {
+  position: relative;
+  margin-left: 150px;
+
+}
+
+.thead-crud {
+  background-image: linear-gradient(to right, rgba(181, 197, 189, 0.93), rgba(171, 161, 12, 0.578));
+}
+
+.information-clientel {
+
+  position: absolute;
+  margin-left: 500px;
+}
+
+.voiture {
+  width: 150px;
+  margin: 2px;
+}
+
+.mageservice {
+  width: 100%;
+  box-shadow: 1px 1px 15px white;
+
+}
+
+/** Commentaire**/
+.commentaire{
+background-color: #1817176a;
+}
+
+/* all link*/
+a{
+  text-decoration: none;
+  text-transform: capitalize;
+  
+}
+
+/**  debut tableau de horraires*/
+.table-horaire{
+  background-color: transparent;
+  width: 80%;
+  border-radius: 5px;
+  margin-left: 130px;
+}
+
+.thead-table-horaire{
+  color: rgb(240, 248, 255);
+  background-color: rgba(0, 0, 0, 0.344);
+}
+
+.tbody-table-horaire{
+  background-color: rgba(246, 245, 241, 0.755);
+}
+.td1-table-horaire{
+  background-color: rgba(184, 166, 5, 0.442);
+}
+.td2-table-horaire{
+  background-color: rgba(207, 178, 14, 0.623);
+}
+.td3-table-horaire{
+  background-color: rgba(181, 184, 3, 0.436);;
+}
+.titre-horaires{
+  margin-left:150px;
+}
+.gestion-horaires{
+  background-color: rgba(0, 0, 0, 0.404);
+  width: 100%;
+  border-radius: 5px;
+  margin-left: 0px;
+  color: aliceblue;
+}
+/*fin debut tableau de horraires*/
+
+ /*page d'accueil*/
+
+
+
+.image-accueil{
+  box-shadow:0 0 25px black;
+  margin-left: 80px;
+  margin-top: 150px;
+  width: 550px;
+  height: 250px;
+  
+ 
+
+
+}
+
+
+/** btn service page d'accueil*/
+.btn-pageaccueil{
+  position: absolute;
+  text-align: center;
+  width: 140px;
+  height: 30px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top:-50px;
+  background-color: rgba(0, 0, 0, 0.208);
+  color: rgb(6, 6, 6);
+  box-shadow: inset 2px 2px 25px rgb(255, 255, 255);
+
+  
+}
+
+.btn-pageaccueil:hover{
+  box-shadow: inset 2px 2px 25px rgba(209, 245, 2, 0.77);
+  color: rgb(255, 255, 255);
+ 
+}
+
+#presentaion{
+  border-radius: 5px ;
+  border: 1px solid rgb(255, 255, 255);
+
+}
+
+.test{
+  margin-left: -150px;
+}
+.logo{
+  color:rgb(195, 2, 2);
+  font-size: 25px;
+  font-family: 'Kaushan Script', cursive;
+  margin-left: 10px;
+}
+.logo-voiture{
+  position: absolute;
+  margin-top: -120px;
+}
+
+
+.card-annonce{
+  background-color: rgba(53, 52, 52, 0.132);
+ 
+ 
+
+}
+
+.bande-card{
+
+  background-color: rgba(68, 67, 67, 0.132);
+ 
+}
+
+
+
+/** commentaire note*/
+.note{
+  width: 840px;
+  height: 100px;
+  color: transparent;
+  margin-left: 215px;
+  
+  }
+
+/* Animation text page d'accueil*/
+.bloc {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bloc span {
+  font-size: 4vw;
+  position: relative;
+  letter-spacing: 25px;
+  margin-top: -700px;
+}
+.ligne {
+  width: 85vw;
+  height: 35px;
+  background-color:rgba(255, 255, 255, 0.774);
+  border-radius: 9999px;
+  margin: 0 auto;
+  margin-top: -700px;
+  position: absolute;
+  z-index: 10;
+}
+
+span:nth-child(odd) {
+  z-index: 11;
+  color: rgb(7, 7, 7);
+  font-family: 'Kaushan Script', cursive;
+}
+span:nth-child(even) {
+  color: rgb(164, 116, 3);
+  z-index: 9;
+  font-family: 'Kaushan Script', cursive;
+
+}
+
+
+

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boite des messages clientels{% endblock %}
+
+{% block body %}
+          {% for message in app.flashes('success') %}
+    <div class="alert alert-success w-75 text-center text-warning-emphasis">
+        {{ message }}
+    </div>
+    {% endfor %}
+      <div class="  container table-message">
+        <div class="row">
+         <div class="col-9">
+          <h1>Boite des messages</h1>
+
+                  
+
+                      <div class="count col-md-3 w-100 bg-dark text-light mx-2 ">
+      ℑ𝔩 𝔶'𝔞 {{ contact.getTotalItemCount }} ʍҽʂʂąցҽʂ
+      
+</div>
+
+          
+          <table class=" text-center table table-striped ">
+  <thead>
+    <tr>
+      <th>#Id</th>
+      <th>Email</th>
+      <th>Prénom</th>
+      <th>Nome</th>
+      <th>Adresse </th>
+      <th>N°:téléphone</th>
+      <th>Sujet</th>
+      <th>Message</th>
+       <th>Option</th>
+    </tr>
+  </thead>
+      {% for contacts in contact %}
+  <tbody >
+    <tr >
+     <td>{{contacts.id}}</td>
+     <td>{{contacts.email}}</td>
+     <td>{{contacts.firstName}} </td>
+     <td>{{contacts.lastName}} </td>
+     <td>{{contacts.adressePostal}} </td>
+     <td>{{contacts.telephone}} </td>
+     <td>{{contacts.sujet}} </td>
+     <td>{{contacts.message}}</td>  
+     <td> <a class="btn btn-light btn-sm ms-5 text-light bg-danger" href="{{path('supprimer_email',{'id': contacts.id})}}"> Supprimer</a></td> 
+     </tr> 
+
+     
+  </tbody>
+   {% endfor %}
+</table>
+     </div> 
+        </div> 
+   
+        
+        </div> 
+  
+           {# display navigation #}
+<div class="navigation d-flex justify-content-center mt-3">
+    {{ knp_pagination_render(contact) }}
+</div>
+   
+{% endblock %}

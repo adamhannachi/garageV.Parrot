@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Employés{% endblock %}
+
+{% block body %}
+      <div class=" d-flex justify-content-center m-5">
+        <div class="row">
+         <div class="col-9">
+          <h1>Liste des Employés</h1>
+
+              <div class="count col-md-3 w-100 bg-dark text-light ms-5">
+      ℑ𝔩 𝔶'𝔞 {{ users.getTotalItemCount }} 𝔭𝔯𝔬𝔣𝔢𝔰𝔰𝔦𝔫𝔫𝔢𝔩𝔰
+       <span> <a class="btn btn-light btn-sm ms-5 text-danger text-bold" href="{{path('nouveau_personnel')}}"> Créer un nouveau personnel</a></span>
+</div>
+
+          <table class="table align-middle mb-0 bg-white ms-5">
+  <thead class="bg-light ">
+    <tr class="text-center">
+      <th>#Id</th>
+      <th>Email</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>adresse</th>
+      <th>Numéro Téléphone</th>
+      <th>Photo</th>
+      <th>Role</th>
+      <th>N°:professionnel</th>
+      <th>Option</th>
+
+    </tr>
+  </thead>
+      {% for user in users %}
+  <tbody>
+    <tr class="text-center">
+      <td>{{user.id}}</td>
+     <td>{{user.email}}</td>
+     <td>{{user.firstName}} </td>
+     <td>{{user.lastName}} </td>
+     <td>{{user.adresse}} </td>
+     <td>{{user.numeroTelephone}} </td>
+     <td><img style="max-width:100px; border-radius:10%;" src="{{vich_uploader_asset(user,'imageFile')}}" alt="" class =""<card-img-top> </td>
+      <td>{{user.roles|join (' ')}} </td>
+     <td>{{user.numeroPersonnel}}</td>  
+     <td>
+      <div class="d-flex">
+          <a class="btn btn-light btn-sm ms-5 text-light bg-success " href="{{path('personnel_modifier', {id: user.id})}}"> Modifier</a>
+         <a class="btn btn-light btn-sm ms-5 text-light bg-danger" href="{{path('personnel_supprimer',{id: user.id})}}"> Supprimer</a>
+     </td>
+      </div>
+      
+     </tr> 
+  </tbody>
+   {% endfor %}
+</table>
+    
+        </div> 
+
+        
+        </div> 
+      
+      </div>
+
+                 {# display navigation #}
+<div class="navigation d-flex justify-content-center mt-3">
+    {{ knp_pagination_render(users) }}
+</div>
+{% endblock %}

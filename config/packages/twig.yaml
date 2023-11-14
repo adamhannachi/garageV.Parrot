@@ -1,0 +1,22 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+      horaire: '@App\Controller\HorairesController'
+      note: '@App\Controller\NoteController'
+      commentaire: '@App\Controller\CommentaireController'
+       
+     
+    
+when@test:
+    twig:
+        strict_variables: false
+       
+    form_themes: ['bootstrap_5_layout.html.twig']
+
+    
+
+
+   
+
+
+

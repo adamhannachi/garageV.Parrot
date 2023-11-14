@@ -1,0 +1,77 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<div class="container formulaire-inscription">
+   <div class="row">
+      <h1 class="text-dark" > Modifier les personnels et les employés</h1>
+      <hr class="text-light">
+
+     
+    {{form_start(form)}}
+     {{form_errors(form)}}
+<div class="d-flex">
+   <div class="">   
+            <div class="m-4 text-dark ">
+                {{form_row(form.email)}}
+            </div>
+  
+            <div class="m-4 text-dark">
+                {{form_row(form.firstName)}}
+            </div>
+
+         <div class="m-4 text-dark">
+                 {{form_row(form.lastName)}}
+         </div>
+
+             <div class="m-4 text-dark">
+                 {{form_row(form.adresse)}}
+         </div>
+
+            <div class="m-4 text-dark">
+                 {{form_row(form.numeroTelephone)}}
+         </div>
+    
+ 
+      
+    <div class="m-4 text-dark">
+            {{form_row(form.password)}}
+       </div>
+
+     <div class="m-4 text-dark">
+       {{form_row(form.numeroPersonnel)}}
+     </div>   
+
+     <div class="m-4 text-dark">
+       {{form_row(form.roles)}}
+     </div> 
+
+         <div class="m-4  text-dark d-flex ">
+        {{form_row(form.imageFile)}}
+         {{form_row(form.submit)}}
+      </div>
+   </div> 
+      <div>
+          <h5 class="text-light m-4">les règles de la boite</h5>
+          <p class="regle text-light">Le changement non autorisé de votre mot de passe par d'autres qui l'aurait oublié 
+          Des problèmes avec d'anciens employés connaissant toujours <br>al'identifiant de connexion de votre compte Indeed 
+          Des détails sur l'entreprise pourraient être divulgués <br> si plusieurs utilisateurs ont un accès illimité au compte 
+          Des actions non autorisées prises par d'autres pourraient sembler<br> avoir été prises par vous
+          Une façon simple d'éviter ces problèmes est d'ajouter les membres <br>
+          de votre équipe d'embauche comme utilisateurs au compte Indeed de votre entreprise. Vous <br>
+          trouverez plus d'information sur la personnalisation des niveaux d'accès et des postes dans<br>
+           votre compte ici. Remarque : Donner à tous les utilisateurs un accès « administrateur » <br>
+           leur permettra de faire des changements que vous n'aurez peut-être pas autorisés au compte.<br>
+           
+            </p>
+      </div> 
+</div>     
+   {{form_end(form)}}
+
+    
+    </div>
+    
+   </div>
+ 
+     
+{% endblock  %}

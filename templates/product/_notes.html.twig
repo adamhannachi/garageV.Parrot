@@ -1,0 +1,28 @@
+
+ 
+
+ {% block body %}
+  <div class="note">
+{{form_start(formnote)}}
+     
+                  <h5 class="text-dark ms-5"> avis de client</h5>
+              
+               <div class="d-flex">
+               
+                  {{form_row(formnote.submit)}}
+                   {{form_row(formnote.note)}} 
+                   {{form_row(formnote.Prenom)}}
+                   
+                  {% for note in notes %}
+                 <div class="text-light py-4 px-5 ms-3 w-100">  Votre note est de <span class="text-warning">{{note.note}}</span>/5</div>
+                 <br>
+              {% endfor %}
+              
+         </div>
+             
+    
+              
+
+{{form_end(formnote)}}
+ </div>
+{% endblock %}

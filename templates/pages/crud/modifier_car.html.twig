@@ -1,0 +1,72 @@
+
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<div class="container bg-dark">
+   <div class="row">
+      <h1 class="text-light" > Modifier les voitures</h1>
+     <hr class="text-light"> 
+      {{form_start(form)}}
+      
+      <div class=" d-flex">
+      <div class="m-4 text-light">
+      {{form_row(form.name)}}
+      </div>
+       <div class="m-4 text-light">
+       {{form_row(form.price)}}
+        </div>
+         <div class="m-4 text-light">
+      {{form_row(form.kilometrage)}}
+      </div>
+        <div class="m-4 text-light">
+       {{form_row(form.years)}}
+        </div>
+
+      </div>
+
+          <div class="m-3 w-50 text-light mb-2">
+       {{form_row(form.category)}}
+        </div>
+      <!---->
+
+         
+         <div class="m-3 w-50 text-light">
+       {{form_row(form.description)}}
+        </div>
+
+          <div class="m-3 w-50 text-light">
+       {{form_row(form.content)}}   
+        </div>
+
+        
+                  <div class="m-3 w-50 text-dark">
+       {{form_row(form.numero_telephone)}}   
+        </div>     
+      
+
+
+         <div class="m-3 w-50 text-light">
+       {{form_row(form.promo)}}
+        </div>
+       
+    
+   
+     <div class="m-3  text-light  ">
+        {{form_row(form.imageFile)}}
+      </div>
+ 
+   
+      </div>
+
+
+
+
+
+      {{form_end(form)}}
+   </div>
+</div>
+
+{% endblock  %}
+
+

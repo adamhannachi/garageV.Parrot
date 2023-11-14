@@ -1,0 +1,84 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<div class="container ">
+   <div class="row">
+      <h1 class="text-dark" > Création d'un nouveau voiture</h1>
+     <hr class="text-dark"> 
+      {{form_start(form)}}
+      
+      <div class=" d-flex">
+      <div class="m-4 text-dark">
+      {{form_row(form.name)}}
+      </div>
+       <div class="m-4 text-dark">
+       {{form_row(form.price)}}
+        </div>
+         <div class="m-4 text-dark">
+      {{form_row(form.kilometrage)}}
+      </div>
+        <div class="m-4 text-dark">
+       {{form_row(form.years)}}
+        </div>
+
+       
+      </div>
+      <div class=" d-flex">
+         <div class="m-4 text-dark">
+       {{form_row(form.nombre_de_place)}}
+        </div>
+         <div class="m-4 text-dark">
+        {{form_row(form.huile)}}
+         </div>
+          <div class="m-4 text-dark">
+         {{form_row(form.boite_de_vitesses)}}
+        </div>
+ </div>
+
+          <div class="m-3 w-50 text-dark mb-2">
+       {{form_row(form.category)}}
+        </div>
+      <!---->
+
+         
+         <div class="m-3 w-50 text-dark">
+       {{form_row(form.description)}}
+        </div>
+
+          <div class="m-3 w-50 text-dark">
+       {{form_row(form.content)}}   
+        </div>
+
+        
+     
+               <div class="m-3 w-50 text-dark">
+       {{form_row(form.numero_telephone)}}   
+        </div>
+
+
+         <div class="m-3 w-50 text-dark">
+       {{form_row(form.promo)}}
+        </div>
+       
+    
+   
+     <div class="m-3  text-dark ">
+        {{form_row(form.imageFile)}}
+      </div>
+
+       
+   
+      </div>
+
+
+
+
+
+      {{form_end(form)}}
+   </div>
+</div>
+
+{% endblock  %}
+
+

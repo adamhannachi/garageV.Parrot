@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marque des voitures{% endblock %}
+
+{% block body %}
+
+
+<h1 class=' ms-5'> Ajouter la liste de marque des voitures </h1>
+
+
+
+
+       <div class="container m-5 w-25">
+
+       <div class="row">
+       <div class= "container">
+
+       {{form_start(form)}}
+         <div class="d-flex text-dark ms-5">
+       {{form_row(form.name,{ 'label': 'Marque de la voiture' })}}
+           
+           {{form_row(form.submit)}}
+          
+           </div>
+       {{form_end(form)}}
+       </div>
+        
+    
+      <table class="table-horaires ms-5 rounded ">
+  <thead class="bg-light text-center ">
+    <tr class="text-center text-dark ">
+      <th>#Id</th>
+      <th>Marque</th>
+      <th class=" bg-dark text-light">Option</th>
+
+    </tr>
+  </thead>
+      {% for categorie in categories %}
+  <tbody>
+    <tr class="text-center ">
+      <td class=" text-center text-light bg-dark">{{categorie.id}}</td>
+     <td class="text-center  text-dark" style="background-color: rgba(184, 166, 5, 0.442); font-family: 'Kaushan Script', cursive;">{{categorie.name}}</td>
+       <td><a class="btn btn-light btn-sm  text-light bg-danger" href="{{path('app_supprimer_model',{id: categorie.id})}}"> Supprimer</a></td>
+     </tr> 
+  </tbody>
+   {% endfor %}
+</table>
+    
+        </div>       
+        
+        </div> 
+ 
+      </div>
+      </div>
+</div>
+{% endblock %}

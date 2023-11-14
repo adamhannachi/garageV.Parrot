@@ -1,0 +1,56 @@
+
+
+{{form_start(form, {attr: {class: 'filter'}})}}
+    <h5 class ="text-light text center mt-3" > Recherche</h5>
+     <div class=" w-100 mt-5">
+    {{form_widget(form.q)}}
+    </div>
+    <hr>
+
+  <h5 class ="text-light text center mt-3" > Filter</h5>
+<h6 class=" mt-5" style="font-size:17px; font-weight: 700; color: rgb(69, 2, 2);">Modele des Voitures</h6>
+   {{form_row(form.Category)}}
+     <hr>
+ <h6 class="text-danger ">Prix</h6>
+<div class="row">
+   <div class="col-md-6 ">
+      {{form_row(form.pmin)}}
+   </div>
+
+    <div class="col-md-6">
+        {{form_row(form.pmax)}}
+    </div>
+</div>
+<!-- slider prix-->
+<div id="price-slider"></div>
+  
+<h6 class="text-danger mt-2">Kilométrage</h6>
+
+<div class="row">
+    <div class="col-md-6">
+       {{form_row(form.kmin)}}
+     </div>
+
+    <div class="col-md-6 ">
+       {{form_row(form.kmax)}}
+    </div>
+</div>
+
+<h6 class="text-danger mt-2">Années</h6>
+
+<div class="row">
+    <div class="col-md-6">
+        {{form_row(form.amin)}}
+    </div>
+
+    <div class="col-md-6">
+       {{form_row(form.amax)}}
+     </div>
+</div>
+  <hr>
+<div class="  w-50  text-dark rounded-4 bg-light text-center">{{form_row(form.promo)}}</div>
+<hr>
+
+<button type ="submit" class="btn btn-warning w-100 text-center mt-3 mb-3">filtrer</button>
+{{form_end(form)}}
+

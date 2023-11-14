@@ -1,0 +1,57 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+<div class="container">
+ <h1>Gestion de Service</h1>
+
+  <div class="d-flex justify-content-end">
+  <a class="btn btn-light btn-sm ms-5 text-dark bg-light "  href="{{path('app_afficher_service_garage')}}"> Retour</a>
+  </div>
+  {{form_start(form)}}
+ 
+      
+      <div>{{form_row(form.servicereparation)}}</div>
+      <div>{{form_row(form.Description)}}</div>
+      <div>{{form_row(form.tarifs)}}</div>
+      <div>{{form_row(form.telephone)}}</div>
+      <div>{{form_row(form.Valider)}}</div>
+      <div >
+        {{form_row(form.imageFile)}}
+      </div>
+     
+
+  {{form_end(form)}}
+
+
+  <table class="table">
+  <thead  class="">
+    <tr >
+      <th scope="col">Service</th>
+      <th scope="col">Tarifs</th>
+       <th scope="col">description</th>
+      <th scope="col">contact de service</th>
+        <th scope="col">Option</th>
+      
+      
+
+    </tr>
+  </thead>
+  <h5 class="mt-2"> list de nos services</h5>
+    {% for services in service %}
+  <tbody class="">
+    <tr>
+      <td class="">{{services.servicereparation}}</td>
+      <td class="">{{services.tarifs| number_format(0,',',' ')}} €</td>
+      <td class="">{{services.Description}}</td>
+      <td class="">{{services.telephone}}</td>
+      <td class=""> <a class="btn btn-light btn-sm ms-5 text-light bg-danger " href="{{path('supprimer_service', {id: services.id})}}"> Supprimer</a></td>
+
+    </tr>
+  
+  </tbody>
+{% endfor %}
+
+</div>
+{% endblock  %}

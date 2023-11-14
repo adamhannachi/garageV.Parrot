@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}service garage{% endblock %}
+
+{% block body %}
+    
+   <div class="container">
+
+     <div class="d-flex justify-content-center ">
+<img style="width:180px; height:180px" src="{{asset('images/voiture/preview.png')}}" > 
+<img style="width:180px; height:180px" src="{{asset('images/voiture/8c-removebg-preview.png')}}" > 
+<img style="width:180px; height:180px" src="{{asset('images/voiture/R__9_-removebg-preview.png')}}" > 
+
+</div>
+   <!--reseaux sociaux-->
+   <div class="réseaux-sociaux mt-3 d-flex justify-content-center">  
+      <a class="text-light ms-5  " href="http://"> facebook  
+   <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#000000}</style><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+   </a>  
+ <!--numero de telephone-->
+     <a class="text-light ms-5" href="tel:+33760005025"> Téléphone Service Préparation Voiture: 07.60.00.50.25</a>
+     <a class="text-light ms-5" href="mailto:Garage-v.Parrot@gmail.com"> Email: Garage-v.Parrot@gmail.com</a>
+    
+   </div>
+
+   <hr class="text-light">
+
+    {% include 'pages/service_garage/designe_page_service.html.twig'%}
+
+
+
+   <h1 class="text-warning">Nos services</h1>
+    <div class="grid">
+    
+{% for services in service %}
+     <div class="card mb-3 bg-dark text-light shadow p-3 mb-5 rounded" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img style=" widht:500px"  src="{{vich_uploader_asset(services,'imageFile')}}" alt="" class ="img-fluid rounded-start"<card-img-top>
+      <div class="logo">Garage V. Parrot</div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+
+        <h5 class="card-title">{{services.servicereparation}}</h5>
+        <hr>
+        <p class="card-text">
+          Description:{{services.Description}}
+        </p>
+        <p class="card-text">
+          <small class=" text-warning">Tarif:{{services.tarifs| number_format(0,',',' ')}} €</small>
+        </p>
+         <a class="text-primary" href="tel:+">Tel: {{services.telephone}}</a>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+</div>
+
+{% endblock %}

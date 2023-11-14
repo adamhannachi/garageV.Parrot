@@ -1,0 +1,81 @@
+{% extends 'base_U.html.twig' %}
+
+{% block title %}All Product{% endblock %}
+
+{% block body %}
+    <h1 class="text-dark ms-5"> Formulaire  des Annonces</h1>
+<div  class="d-flex   ">
+  <div class ="row m-5">
+  <!--image profile-->
+       
+   <div class="card  mt-1 w-100 card-annonce">
+<img style="width:350px" src="{{vich_uploader_asset(product,'imageFile')}}" alt="" class =""<card-img-top>
+<div class="card-body ">
+   <h5 class="card-title">{{product.name}}</h5>
+   <div class="card-title  text text-primary" style="font-weight:bold; font-size:1.5rem"> {{product.price | number_format(0,',',' ')}} €
+        {% if product.promo %}
+         <div class="text text-warning ">Promo $</div>
+        {% endif %}
+   </div>
+      <h1 class="text-light"> Caractéristiques</h1>
+     <div class="card-title bande-card bg-light "> <h5 class="text-danger">Kilométrage:</h5> {{product.kilometrage}} k/m</div>
+     <div class="card-title bande-card  bg-light "><h5 class="text-danger">Année de sicrculation:</h5>{{product.years}} </div>
+       <div class="card-title bande-card  bg-light "><h5 class="text-danger">Nombre de place:</h5>{{product.nombreDePlace}} </div>
+         <div class="card-title bande-card  bg-light "><h5 class="text-danger">Boite de vitesse</h5>{{product.boiteDeVitesses}} </div>
+  
+      <div class="text text-muted  bande-card bg-light"><h5 class="text-danger">Nom du moteur:</h5> {{product.description}}</div>
+      <div class="text text-muted  bande-card bg-light"><h5 class="text-danger">Poids à vide :</h5> {{product.content}}</div>
+
+      <div>
+         {% for c in product.category %}
+       <em class="text-muted  text-primary text-italic">#{{c.name}}</em> 
+         {% endfor %}
+      </div>
+     
+</div>
+
+</div>
+        
+          </div>
+        
+             
+<div  class="card  mt-5 w-50 card-annonce">
+ <div class ="row m-5">
+{{form_start(form)}}
+
+<div class="text-light">
+{{form_row(form.firstName)}}
+<div>
+<div>
+{{form_row(form.lastName)}}
+<div>
+<div>
+{{form_row(form.email)}}
+<div>
+<div>
+{{form_row(form.telephone)}}
+<div>
+<div>
+{{form_row(form.sujet)}}
+<div>
+<div>
+{{form_row(form.message)}}
+<div>
+
+     <div class="nameannonce">
+{{form_row(form.nameAnnonce)}}
+</div>
+{{form_end(form)}}
+
+
+
+
+
+</div>
+</div>
+   </div>          
+           
+        
+  
+  
+{% endblock %}

@@ -1,0 +1,47 @@
+
+
+{% block body %}
+  
+<div class="container">
+
+<table class="table-horaire">
+<h5 class="titre-horaires">Horaires d'ouverture</h5>
+  <thead  class="thead-table-horaire">
+    <tr >
+      <th scope="col">Jours</th>
+      <th scope="col"></th>
+       <th scope="col">Matin</th>
+      <th scope="col"></th>
+       <th scope="col">Après midi</th>
+      
+
+    </tr>
+  </thead>
+    {% for horaires in horaire %}
+  <tbody class="tbody-table-horaire">
+    <tr  >
+    
+      <td class="td1-table-horaire">{{horaires.jours}}</td>
+      <td class="td2-table-horaire">{{horaires.DebutMatin|date('H:I:S')}}</td>
+      <td class="td3-table-horaire">{{horaires.FinMatin|date('H:I:S')}}</td>
+      {% if horaires.IsPublic == 1 %}
+      <td class="td4-table-horaire">{{horaires.DebutApresMidi|date('H:I:S')}}</td>
+      <td class="td5-table-horaire">{{horaires.FinApresMidi|date('H:I:S')}}</td>
+   
+
+
+       {% endif %}
+     
+       
+    
+    </tr>
+  
+  </tbody>
+
+ 
+{% endfor %}
+  
+</table>
+
+</div>
+{% endblock  %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<div class="container formulaire-contact">
+   <div class="row">
+      <h1 class="text-dark" >Contactez nous par message</h1>
+      <hr class="text-light">
+
+     
+    {{form_start(form)}}
+     {{form_errors(form)}}
+<div class="d-flex">
+   <div class="">   
+             <div class="my-3 mx-5 text-dark  w-100">
+          {{form_row(form.email)}}
+      </div>
+
+      
+      <div class="my-3 mx-5 text-dark w-100">
+          {{form_row(form.firstName)}}
+      </div>
+
+
+      <div class="my-3 mx-5 text-dark w-100">
+          {{form_row(form.lastName)}}
+      </div>
+ 
+
+      <div class="my-3 mx-5 text-dark w-100">
+           {{form_row(form.adresse_postal)}}
+      </div>
+
+
+      <div class="my-3 mx-5 text-dark w-100">
+           {{form_row(form.telephone)}}
+      </div>
+
+       
+      <div class="my-3 mx-5 text-dark w-100">
+         {{form_row(form.sujet)}}
+      </div>
+    
+ 
+      
+     <div class="my-3 mx-5 text-dark w-100">
+         {{form_row(form.message)}}
+      </div>
+
+       <div class="my-3 mx-5 text-dark w-100">
+         {{form_row(form.submit)}}
+      </div>
+   </div> 
+      <div  class="information-clientel ">
+          <h5 class="text-light m-4">Remerciements</h5>
+          <p class="regle text-light">Cher(e) Client,
+            Nous vous remercions d'avoir pris contact avec nous, nous allons répondre  <br> 
+            à votre message. Nous sommes heureux de vous compter parmi nos<br>
+             clients et nous espérons que vous avez apprécié votre expérience avec nous. Si vous avez <br>
+             besoin de quoi que ce soit d'autre, n'hésitez pas à nous contacter. <br>Nous sommes là pour vous aider.
+            Avec toute notre gratitude,</p>
+
+            <h5 class="text-light">contact  par telephone: 07.49.55.31.21</h5>
+      </div> 
+</div>     
+   {{form_end(form)}}
+
+    
+    </div>
+    
+   </div>
+ 
+     
+{% endblock  %}

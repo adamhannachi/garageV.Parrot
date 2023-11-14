@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des voitures{% endblock %}
+
+{% block body %}
+          {% for message in app.flashes('success') %}
+    <div class="alert alert-success w-75 text-center text-warning-emphasis">
+        {{ message }}
+    </div>
+{% endfor %}
+      <div class=" container-table-product">
+        <div class="row">
+         <div class="col-9">
+          <h1>Liste des voitures</h1>
+  
+         
+
+                      <div class="count col-md-3 w-100 bg-dark text-light mx-2 ">
+      ℑ𝔩 𝔶'𝔞 {{ products.getTotalItemCount }} 𝔳𝔬𝔦𝔱𝔲𝔯𝔢𝔰
+      <span> <a class="btn btn-light btn-sm ms-5 text-danger text-bold" href="{{path('nouveau_car')}}"> Créer une nouvelle voiture</a></span>
+</div>
+
+          <table class=" mx-2 bg-light  text-center ">
+  <thead class="thead-crud">
+    <tr>
+      <th>#Id</th>
+      <th>Model</th>
+      <th>Image</th>
+      <th>Prix</th>
+      <th>Promo</th>
+      <th>k/m</th>
+      <th>Année</th>
+      <th>Caractéristique</th>
+      <th>Content</th>
+       <th>Numéro-Téléphone</th>
+      <th>Option</th>
+
+    </tr>
+  </thead>
+      {% for product in products %}
+  <tbody >
+    <tr>
+     <td class="bg-dark text-light">{{product.id}}</td>
+     <td>{{product.name}}</td>
+     <td><img style="max-width:150px;" src="{{vich_uploader_asset(product,'imageFile')}}" alt="" class =""<card-img-top> </td>
+     <td>{{product.price}} </td>
+     <td> {% if product.promo %}
+        <div class="text text-danger ">Promo </div>
+        {% endif %} </td>
+     <td>{{product.kilometrage}} </td>
+     <td>{{product.years}}</td>  
+     <td>{{product.description}}</td> 
+     <td>{{product.content}}</td>  
+      <td>{{product.numeroTelephone}}</td>  
+     <td >
+     <div class="d-flex">
+      
+     <a class="btn btn-light btn-sm ms-5 text-light bg-success " href="{{path('app_modifier', {id: product.id})}}"> Modifier</a>
+     <a class="btn btn-light btn-sm ms-5 text-light bg-danger" href="{{path('app_supprimer',{id: product.id})}}"> Supprimer</a>
+
+</div>
+     </td>  
+      
+      
+     </tr> 
+  </tbody>
+   {% endfor %}
+</table>
+    
+        </div> 
+   
+        
+        </div> 
+ 
+      </div>
+           {# display navigation #}
+<div class="navigation d-flex justify-content-center mt-3">
+    {{ knp_pagination_render(products) }}
+</div>
+{% endblock %}

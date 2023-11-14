@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des voitures{% endblock %}
+
+{% block body %}
+          {% for message in app.flashes('success') %}
+    <div class="alert alert-success w-75 text-center text-warning-emphasis">
+        {{ message }}
+    </div>
+{% endfor %}
+      <div class=" container ">
+        <div class="row">
+         <div class="col-9">
+          <h1>Messages des Annonces</h1>
+  
+         
+
+ 
+    
+</div>
+
+          <table class=" mx-2 bg-light  text-center ">
+  <thead class="thead-crud">
+    <tr>
+      <th>#Id</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>Sujet</th>
+      <th>Message</th>
+      <th>Model</th>
+      
+
+    </tr>
+  </thead>
+      {% for  contactAnnonce in  contactAnnonce %}
+  <tbody >
+    <tr>
+     <td class="bg-dark text-light">{{contactAnnonce.id}}</td>
+     <td>{{contactAnnonce.firstName}}</td>
+     <td>{{contactAnnonce.lastName}} </td>
+     <td>{{contactAnnonce.email}} </td>
+     <td>{{contactAnnonce.telephone}}</td>  
+     <td>{{contactAnnonce.sujet}}</td> 
+     <td>{{contactAnnonce.message}}</td>  
+     <td >
+     
+      <a class="btn btn-light btn-sm ms-5 text-light bg-danger" href="{{path('supprimer_Message_Annonce',{'id': contactAnnonce.id})}}"> Supprimer</a>
+    
+     </td>  
+      
+      
+     </tr> 
+  </tbody>
+   {% endfor %}
+</table>
+    
+        </div> 
+   
+        
+        </div> 
+ 
+      </div>
+           {# display navigation #}
+<div class="navigation d-flex justify-content-center mt-3">
+    {{ knp_pagination_render(contactAnnonce) }}
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+
+   
+ 
+    <div class="card  mt-5">
+      
+<img src="{{vich_uploader_asset(product,'imageFile')}}" alt="" class =""<card-img-top>
+<div class="card-body ">
+   <h5 class="card-title">{{product.name}}</h5>
+   <div class="card-title  text text-primary" style="font-weight:bold; font-size:1.5rem"> {{product.price | number_format(0,',',' ')}} €
+        {% if product.promo %}
+         <div class="text text-warning ">Promo $</div>
+        {% endif %}
+   </div>
+     <div class="card-title "> {{product.kilometrage}} k/m</div>
+     <div class="card-title ">Année {{product.years}} </div>
+     
+      <p class="text text-muted "> {{product.description}}</p>
+      <p class="text text-muted "> {{product.content}}</p>
+
+       <a style="color:red;" href="tel:+33749553121"> <span class="text-dark">Tel:</span>{{product.numeroTelephone}}</a> 
+
+      <div>
+         {% for c in product.category %}
+       <em class="text-muted  text-primary text-italic">#{{c.name}}</em> 
+         {% endfor %}
+       
+      </div>
+
+         <div>
+         
+    
+ </div>
+  
+</div>
+ <a class="link-annonce" style="background: rgb(19, 116, 4); width:90px;text-decoration:none; color:white;box-shadow: 0px 5px 9px black;
+ 
+ " href="{{path('app_ContactAnnonce',{'id': product.id})}}">Annonce</a>
+ 
+   </div>
+
+
+</body>
+</html>
+ 

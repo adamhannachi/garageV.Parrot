@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+<div class="container">
+<table class="gestion-horaires">
+  <h1>Définir horaires de travail </h1>
+  <hr class="mt-3 text-light">
+  {{form_start(form)}}
+  <tbody >
+    <tr class='text-center'>
+      
+      <td>{{form_row(form.jours)}}</td>
+      <td>{{form_row(form.debut_matin)}}</td>
+      <td>{{form_row(form.fin_matin)}}</td>
+      <td>{{form_row(form.debut_apresMidi)}}</td>
+      <td>{{form_row(form.fin_apresMidi)}}</td>
+      <td>{{form_row(form.is_public)}}</td>
+      <td>{{form_row(form.Valider)}}</td>
+     
+    </tr>
+  
+  </tbody>
+
+  {{form_end(form)}}
+</table>
+
+  
+</table>
+
+</div>
+{% endblock  %}

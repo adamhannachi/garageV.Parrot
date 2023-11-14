@@ -1,0 +1,149 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}profile{% endblock %}
+
+{% block body %}
+
+<section style="background-image: linear-gradient(#9a8301a7 #000000a8)">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" >
+       
+        </nav>
+      </div>
+    </div>
+ 
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+        <div class="d-flex justify-content-center text-danger">
+        <h5>Profile</h5>
+        </div>
+          <div class="card-body text-center bg-dark">
+            <img style="width:50%; height:40%;" src="{{vich_uploader_asset(app.user,'imageFile')}}" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3 text-light">{{app.user.firstName}} <span>{{app.user.lastName}}<span></h5>
+            <p class=" mb-1 text-danger">Garage V.Parrot</p>
+            <p class="mb-4 text-light">Toulouse</p>
+            <div class="d-flex justify-content-center mb-2">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+             
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                <p class="mb-0 text-primary">Email: Garage-v.Parrot@gmail.com</p>
+              </li>
+            
+          
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Prénom / Nom</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{app.user.firstName}} <span>{{app.user.lastName}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{app.user.email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Numero telephone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(0033){{app.user.numeroTelephone}}</p>
+              </div>
+            </div>
+             <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Numero badge</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">"{{app.user.numeroPersonnel}}"</p>
+              </div>
+            </div>
+          
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{app.user.adresse}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0 bg-dark">
+              <div class="card-body">
+                <p class="mb-4"><span class="text-primary font-italic me-1">Gestion & Voitures Occasion</span> 
+                </p>
+                <p class="mb-1" style="font-size: 16px;">
+                <a class="btn btn-outline-warning" href="{{path('app_categories')}}"> Modele de voiture <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ff0000}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a></p>
+
+                  
+                <p class="mt-4 mb-1" style="font-size: 16px;">
+                <a class="btn btn-outline-warning" href="{{path('app_crud')}}">caractéristique des voitures <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ff0000}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a></p>
+
+                   <p class="mt-4 mb-1" style="font-size: 16px;">
+                <a class="btn btn-outline-warning" href="{{path('app_service_garage')}}">Services du garage <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ff0000}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a>
+               
+                <p class="mt-4 mb-1" style="font-size: 16px;"> 
+                <a class="btn btn-outline-warning" href="{{path('app_boite_Contact')}}">contacts Annonce <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ff0000}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a></p>
+            
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0 bg-dark">
+              <div class="card-body">
+                <p class="mb-4"><span class="text-primary font-italic me-1">Gestion & employés  et Messages clientels</span> 
+                </p>
+
+               <p class="mt-4 mb-1" style="font-size: 16px;">
+                <a class="btn btn-outline-primary" href="{{path('app_user')}}">Gestion des employés <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1e7c04}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a></p>
+
+
+                 <p class="mt-4 mb-1" style="font-size: 16px;">
+                <a class="btn btn-outline-primary" href="{{path('app_email')}}">Email <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1e7c04}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a> </p>
+
+                 
+               
+
+                 <p class="mt-4 mb-1" style="font-size: 16px;;">
+                <a class="btn btn-outline-primary" href="{{path('app_horaires')}}">horaires d'ouverture <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1e7c04}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+{% endblock %}
